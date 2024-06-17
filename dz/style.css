@@ -1,0 +1,329 @@
+@font-face {
+    font-family: Jost-Regular;
+    src: url(/dz/fonts/jost-regular.ttf);
+}
+@font-face {
+    font-family: Jost-semibold;
+    src: url(/dz/fonts/jost-semibold.ttf);
+}
+@font-face {
+    font-family: DM-serif;
+    src: url(/dz/fonts/dm-serif-display-regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+header, .container_project, .blog_container, footer {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+.visible_hidden {
+    display: none;
+}
+.navigation {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation ul {
+    display: flex;
+    margin-top: 44px;
+    text-align: center;
+    align-items: center;
+}
+
+.left_nav span {
+   font-family: DM-serif;
+   font-size: 40px;
+   font-weight: 400;
+   padding-left: 10px;
+   color: #292F36;
+}
+
+.right_nav li a{
+    padding: 30px;
+    font-family: Jost-Regular;
+    font-size: 20px;
+    font-weight: 400;
+    color: #292F36;
+}
+.baner {
+    background-image: url(./img/header_foto.jpeg);
+    height: 758px;
+    background-position: center;
+}
+.content_baner {
+    padding: 208px 0 0 52px;
+}
+.content_baner h2 {
+    font-family: DM-serif;
+    font-size: 65px;
+    line-height: 65px;
+    color: #292F36;
+    height: 162px;
+    max-width: 595px;
+}
+.content_baner p {
+    font-family: Jost-Regular;
+    font-size: 22px;
+    line-height: 20px;
+    color: #4D5053;
+    height: 66px;
+    max-width: 433px;
+}
+.content_baner a {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 182px;
+    height: 75px;
+    background-color: #292F36;
+    color: #ffffff;
+    font-family: Jost-semibold;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 18px;
+    border: none;
+}
+
+.content_baner a:hover {
+    cursor: pointer;
+}
+.container_block_project {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 56px;
+    column-gap: 98px;
+    margin-top: 93px;
+}
+.content_project {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-top: 96px;
+    
+}
+.content_project h2 {
+    font-family: DM-serif;
+    font-size: 50px;
+    font-weight: 400;
+    color: #292F36;
+    height: 63px;
+    max-width: 788px;
+}
+.content_project p {
+    font-family: Jost-Regular;
+    font-size: 22px;
+    font-weight: 400;
+    color: #4D5053;
+    height: 66px;
+    max-width: 475px;
+    margin-top: 8px;
+}
+.sub_content_project {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 28px;
+}
+.sub_content_project h3 {
+    font-family: DM-serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: #292F36;
+}
+.sub_content_project span {
+    font-family: Jost-Regular;
+    font-size: 22px;
+    font-weight: 400;
+    color: #4D5053;
+}
+.sub_content_right a {
+    display: block;
+    background-color: #F4F0EC;
+    background-image: url(/dz/img/go.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.counter_block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 457px;
+    background-color: #F4F0EC;
+    column-gap: 40px;
+    margin-top: 96px;
+}
+.counter_block .count_line {
+    border: 1px solid #CDA274;
+    height: 130px;
+}
+.counter_block h2 {
+    font-family: DM-serif;
+    font-size: 85px;
+    font-weight: 400;
+    color: #CDA274;
+}
+.counter_block span {
+    font-family: Jost-Regular;
+    font-size: 22px;
+    font-weight: 400;
+    color: #4D5053;
+}
+.content_blog {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-top: 96px;
+}
+.content_blog h2 {
+    font-family: DM-serif;
+    font-size: 50px;
+    font-weight: 400;
+    color: #292F36;
+    height: 126px;
+    max-width: 362px;
+}
+.content_blog p {
+    font-family: Jost-Regular;
+    font-size: 22px;
+    font-weight: 400;
+    color: #4D5053;
+    height: 66px;
+    max-width: 475px;
+    margin-top: 12px;
+}
+.blog_list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 17px;
+    margin-top: 52px;
+}
+.blog_item {
+    padding: 21px;
+    border: 1px solid #F4F0EC;
+    border-radius: 68px;
+    
+}
+.sub_content_blog {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: left;
+    margin-top: 21px;
+}
+.sub_blog_left h3 {
+    font-family: DM-serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: #292F36;
+    max-width: 305px;
+    text-align: left;
+}
+.sub_blog_right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 17px;
+}
+.sub_blog_right span {
+    font-family: Jost-Regular;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4D5053;
+}
+.sub_blog_right a {
+    display: block;
+    background-color: #F4F0EC;
+    background-image: url(/dz/img/go.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.blog_item:hover {
+    background-color: #F4F0EC;
+}
+.blog_item:hover a {
+    background-color: #ffffff;
+}
+.container_footer {
+    display: flex;
+   justify-content: space-between;
+   margin-top: 33px;
+}
+.logo_footer {
+    display: flex;
+}
+.logo_footer p {
+    font-family: DM-serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: #292F36;
+    padding-left: 10px;
+}
+.social_footer {
+    display: flex;
+    margin-top: 31px;
+}
+.social_footer a:last-child {
+    padding-left: 54px;
+}
+.footer_block h2 {
+    font-family: DM-serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: #292F36;
+    margin-top: 10px;
+    align-items: center;
+    text-align: center;
+}
+.footer_block li {
+    font-family: Jost-Regular;
+    font-size: 22px;
+    font-weight: 400;
+    margin-top: 30px;
+}
+.footer_block a {
+    color: #4D5053;
+}
+.footer_block address {
+    display: flex;
+    flex-direction: column;
+    font-family: Jost-Regular;
+    font-size: 22px;
+    font-weight: 400;
+    margin-top: 30px;
+    color: #4D5053;
+    width: 258px;
+    float: inline-end;
+    row-gap: 20px;
+    float: right;
+}
+
+
+
+
+.footer_block {
+    height: 302px;
+}
