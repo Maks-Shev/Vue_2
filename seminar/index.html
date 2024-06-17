@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="product">
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.price }}</p>
+            <button @click="getDiscount()">Скидка</button>
+            <p>Стоимость со скидкой: {{ priceWithDiscount }}</p>
+        </div>
+
+        <div class="list_products" v-for="(item, index) in listProducts" :key="item.id">
+                    <input type="text" v-model.number="item.quantity"> 
+                    <input type="checkbox" v-model="item.bought">
+                    <span>{{ item.name }}</span>
+        </div>
+
+        <div class="contacts">
+            <div class="superForm">
+                <p>Имя:</p>
+                <input type="text" v-model="newContact.name">
+                <p>Фамилия:</p>
+                <input type="text" v-model="newContact.secondName">
+                <p>Email</p>
+                <input type="text" v-model="newContact.email">
+                <br>
+                <br>
+                <button @click="addContact">Добавить пользовотеля</button>
+            </div>
+            <br>
+            <br>
+            <div class="users">
+                <ul v-for="(item, index) in contacts" :key="item.id">
+                    <li>ID:{{ item.id }}  {{item.name}} {{item.secondName}}: {{item.email}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    discount: 0,
+                    product: {
+                        name: 'Стул',
+                        price: 1000,
+                        url: 'photo.jpg',
+                    },
+                    listProducts: [
+                        {
+                            name: 'Молоко',
+                            quantity: 2,
+                            bought: false,
+                        },
+                        {
+                            name: 'Хлеб',
+                            quantity: 1,
+                            bought: false,
+                        },
+                        {
+                            name: 'Яблоки',
+                            quantity: 6,
+                            bought: false,
+                        },
+                        {
+                            name: 'Мясо',
+                            quantity: 3,
+                            bought: false,
+                        },
+                    ],
+                    contacts: [
+                        {
+                            id: 0,
+                            name: 'Иван',
+                            secondName: 'Иванов',
+                            email: 'ivan@mail.ru',
+                        },
+                        {
+                            id: 1,
+                            name: 'Петр',
+                            secondName: 'Петров',
+                            email: 'petr@mail.ru',
+                        },
+                        {
+                            id: 2,
+                            name: 'Андрей',
+                            secondName: 'Андреев',
+                            email: 'andrey@mail.ru',
+                        },
+                        {
+                            id: 3,
+                            name: 'Наталья',
+                            secondName: 'Тимкина',
+                            email: 'natalia@mail.ru',
+                        },
+                    ],
+                    newContact: {
+                        name: '',
+                        secondName: '',
+                        email: '',
+                    },    
+                }
+            },
+            methods: {
+                getDiscount() {
+                    this.discount = Math.floor(Math.random() * 20)
+                },
+                addContact() {
+                    if (this.newContact.name && this.newContact.secondName && this.newContact.email) {
+                        // this.contacts.push(this.newContact); // Так делать нельзя
+                        
+                        this.contacts.push(JSON.parse(JSON.stringify({id: this.contacts.length, ...this.newContact}))); 
+                        this.contacts.push({id: this.contacts.length, ...this.newContact}); // Такой вариант ттоже допустим
+                        this.newContact.name = '';
+                        this.newContact.secondName = '';
+                        this.newContact.email = '';
+                    } else {
+                        alert('Заполните все поля')
+                    }
+                },
+            },
+
+            computed: {
+                priceWithDiscount() {
+                    return (
+                        this.product.price - (this.product.price * this.discount) / 100
+                    ).toFixed(2) // округление до двух знаков после запятой
+                }
+            },
+
+        }).mount('#app')
+    </script>
+</body>
+</html>

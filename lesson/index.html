@@ -21,7 +21,7 @@
 <body>
 
     <div id="app">
-        <!-- <h2>Коструктор</h2>
+        <h2>Коструктор</h2>
         <input type="text" v-model="blockWidth">
         <input type="text" v-model="blockHeigth">
         <input type="text" v-model="blockColor">
@@ -56,7 +56,7 @@
         <ul>
             <li v-for="item in listItems" :key="item.id">{{ item }}</li>
         </ul>
-        <input type="text" v-model="newList" @keyup.enter="addItem"> -->
+        <input type="text" v-model="newList" @keyup.enter="addItem">
 
         <article  v-for="article in data" :key="article.id" class="article">
             <h2 class="article_title">{{ article.title }}</h2>
